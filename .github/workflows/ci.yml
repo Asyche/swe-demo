@@ -3,7 +3,7 @@ name: CI
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
  
 permissions:
@@ -52,8 +52,8 @@ jobs:
       # Install Playwright browser dependencies for E2E tests
       - run: npx playwright install --with-deps
  
-  # Run the test tasks using Nx
-# The "-t" flag stands for "target"
+      # Run the test tasks using Nx
+      # The "-t" flag stands for "target"
       - run: npx nx run-many -t lint build # test e2e --> comment tests out until you learned how to write unit and e2e tests in Angular
  
       # Optional: Add self-healing CI with Nx Cloud to automatically fix failures
